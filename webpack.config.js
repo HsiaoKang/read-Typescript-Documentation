@@ -1,0 +1,20 @@
+module.exports = {
+    entry:"./code/index.ts",
+    output:{
+        filename:"./dist/bundle.js"
+    },
+    devtool:"source-map",
+    resolve:{
+        extensions:["",".Webpack.js",".web.js",".ts",".tsx",".js"]
+    },
+    module:{
+        loaders:[
+            {test:/\.tsx?$/,loader:"ts-loader"}
+        ],
+        preLoaders:[
+            {
+                test:/\.js$/,loader:"source-map-loader"
+            }
+        ]
+    }
+}
